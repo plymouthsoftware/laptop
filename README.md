@@ -49,9 +49,9 @@ Optionally, review the log:
 less ~/laptop.log
 ```
 
-Optionally, [install thoughtbot/dotfiles][dotfiles].
+Optionally, [install plymouthsoftware/dotfiles][dotfiles].
 
-[dotfiles]: https://github.com/thoughtbot/dotfiles#install
+[dotfiles]: https://github.com/plymouthsoftware/dotfiles#install
 
 Debugging
 ---------
@@ -73,7 +73,7 @@ macOS tools:
 
 Unix tools:
 
-* [Universal Ctags] for indexing files for vim tab completion
+* ~~[Exuberant Ctags] for indexing files for vim tab completion~~
 * [Git] for version control
 * [OpenSSL] for Transport Layer Security (TLS)
 * [RCM] for managing company and personal dotfiles
@@ -106,7 +106,7 @@ GitHub tools:
 
 Image tools:
 
-* [ImageMagick] for cropping and resizing images
+* ~~[ImageMagick] for cropping and resizing images~~
 
 Programming languages, package managers, and configuration:
 
@@ -126,8 +126,8 @@ Programming languages, package managers, and configuration:
 
 Databases:
 
-* [Postgres] for storing relational data
-* [Redis] for storing key-value data
+* ~~[Postgres] for storing relational data~~
+* ~~[Redis] for storing key-value data~~
 
 [Postgres]: http://www.postgresql.org/
 [Redis]: http://redis.io/

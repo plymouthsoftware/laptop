@@ -36,10 +36,12 @@ trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
 set -e
 
 if [ ! -d "$HOME/.bin/" ]; then
+  fancy_echo "Creating $HOME/.bin"
   mkdir "$HOME/.bin"
 fi
 
 if [ ! -f "$HOME/.zshrc" ]; then
+  fancy_echo "Creating $HOME/.zshrc"
   touch "$HOME/.zshrc"
 fi
 
@@ -81,6 +83,14 @@ case "$SHELL" in
     ;;
 esac
 
+if ! [ -d "$HOME/.oh-my-zsh" ]; then
+  fancy_echo "Installing oh-my-zsh"
+  git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+else
+  fancy_echo "oh-my-zsh already installed"
+fi
+
+
 gem_install_or_update() {
   if gem list "$1" --installed > /dev/null; then
     gem update "$@"
@@ -112,11 +122,12 @@ brew update --force # https://github.com/Homebrew/brew/issues/1151
 brew bundle --file=- <<EOF
 tap "thoughtbot/formulae"
 tap "homebrew/services"
-tap "universal-ctags/universal-ctags"
+# tap "universal-ctags/universal-ctags"
+tap "caskroom/cask"
 tap "heroku/brew"
 
 # Unix
-brew "universal-ctags", args: ["HEAD"]
+# brew "universal-ctags", args: ["HEAD"]
 brew "git"
 brew "openssl"
 brew "rcm"
@@ -135,7 +146,7 @@ brew "parity"
 brew "hub"
 
 # Image manipulation
-brew "imagemagick"
+# brew "imagemagick"
 
 # Programming language prerequisites and package managers
 brew "libyaml" # should come after openssl
@@ -143,9 +154,12 @@ brew "coreutils"
 brew "yarn"
 cask "gpg-suite"
 
+# Docker
+cask "docker"
+
 # Databases
-brew "postgres", restart_service: :changed
-brew "redis", restart_service: :changed
+# brew "postgres", restart_service: :changed
+# brew "redis", restart_service: :changed
 EOF
 
 fancy_echo "Update heroku binary ..."
