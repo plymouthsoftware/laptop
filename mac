@@ -137,6 +137,7 @@ brew "tmux"
 brew "vim"
 brew "watchman"
 brew "zsh"
+brew "zsh-syntax-highlighting"
 
 # Heroku
 brew "heroku/brew/heroku"
