@@ -221,6 +221,12 @@ networksetup -setdnsservers "Wi-Fi" 1.1.1.1 0.0.0.0
 fancy_echo "You may also want to configure other network services to use CloudFlare DNS:"
 networksetup -listallnetworkservices
 
+if [ -f "$PWD/custom.d/mac" ]; then
+  fancy_echo "Running customizations from custom.d/mac ..."
+  # shellcheck disable=SC1090
+  . "$PWD/custom.d/mac"
+fi
+
 if [ -f "$HOME/.laptop.local" ]; then
   fancy_echo "Running your customizations from ~/.laptop.local ..."
   # shellcheck disable=SC1090

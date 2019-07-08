@@ -1,0 +1,11 @@
+#!/bin/sh
+
+fancy_echo "Installing common applications..."
+brew bundle --file=- <<EOF
+# Browsers
+cask "google-chrome"
+cask "firefox"
+
+# Docker
+cask "docker"
+EOF
