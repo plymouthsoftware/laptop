@@ -155,16 +155,10 @@ brew "coreutils"
 brew "yarn"
 cask "gpg-suite"
 
-# Docker
-cask "docker"
-
 # Databases
-brew "libpq"
 # brew "postgres", restart_service: :changed
 # brew "redis", restart_service: :changed
 EOF
-
-brew link --force "libpq"
 
 fancy_echo "Update heroku binary ..."
 brew unlink heroku

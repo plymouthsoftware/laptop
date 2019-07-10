@@ -8,4 +8,12 @@ cask "firefox"
 
 # Docker
 cask "docker"
+
+# Slack
+cask "slack"
+
+# libpq for postgres connectivity without server
+brew "libpq"
 EOF
+
+brew link --force "libpq"
