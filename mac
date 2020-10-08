@@ -215,7 +215,7 @@ install_asdf_language "nodejs"
 
 # Configure WiFi DNS to use CloudFlare
 fancy_echo "Configuring Wi-Fi DNS to use CloudFlare"
-networksetup -setdnsservers "Wi-Fi" 1.1.1.1 0.0.0.0
+networksetup -setdnsservers "Wi-Fi" 1.1.1.1 1.0.0.1
 
 fancy_echo "You may also want to configure other network services to use CloudFlare DNS:"
 networksetup -listallnetworkservices
